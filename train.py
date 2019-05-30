@@ -5,6 +5,7 @@ import torch.nn as nn
 import os
 import visdom
 import random
+from tqdm import tqdm as tqdm
 
 from csrnet import CSRNet
 from my_dataset import CrowdDataset
@@ -19,7 +20,7 @@ if __name__=="__main__":
     lr                = 1e-7
     batch_size        = 1
     momentum          = 0.95
-    epochs            = 400
+    epochs            = 40000
     steps             = [-1,1,100,150]
     scales            = [1,1,1,1]
     workers           = 4
@@ -30,7 +31,7 @@ if __name__=="__main__":
     device=torch.device(gpu_or_cpu)
     torch.cuda.manual_seed(seed)
     model=CSRNet().to(device)
-    criterion=nn.MSELoss(size_average=False).to(device)
+    criterion=nn.L1Loss(size_average=False).to(device)
     optimizer=torch.optim.SGD(model.parameters(),lr,
                               momentum=momentum,
                               weight_decay=0)
@@ -50,7 +51,7 @@ if __name__=="__main__":
         # training phase
         model.train()
         epoch_loss=0
-        for i,(img,gt_dmap) in enumerate(train_loader):
+        for i,(img,gt_dmap) in enumerate(tqdm(train_loader)):
             img=img.to(device)
             gt_dmap=gt_dmap.to(device)
             # forward propagation
@@ -69,7 +70,7 @@ if __name__=="__main__":
         # testing phase
         model.eval()
         mae=0
-        for i,(img,gt_dmap) in enumerate(test_loader):
+        for i,(img,gt_dmap) in enumerate(tqdm(test_loader)):
             img=img.to(device)
             gt_dmap=gt_dmap.to(device)
             # forward propagation
