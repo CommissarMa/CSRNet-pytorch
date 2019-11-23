@@ -17,7 +17,7 @@ git clone https://github.com/CommissarMa/CSRNet-pytorch.git
 We'll call the directory that you cloned CSRNet-pytorch as ROOT.
 # Data Setup
 &emsp;1. Download ShanghaiTech Dataset from
-Dropbox: [link](https://www.dropbox.com/s/fipgjqxl7uj8hd5/ShanghaiTech.zip?dl=0) or Baidu Disk: [link](http://pan.baidu.com/s/1nuAYslz)  
+[Dropbox](https://www.dropbox.com/s/fipgjqxl7uj8hd5/ShanghaiTech.zip?dl=0) or [Baidu Disk](https://pan.baidu.com/s/101mNo_Vz21IwDYnYTnLQpw) (code: a2v8) 
 &emsp;2. Put ShanghaiTech Dataset in ROOT and use "data_preparation/k_nearest_gaussian_kernel.py" to generate ground truth density-map. (Mind that you need modify the root_path in the main function of "data_preparation/k_nearest_gaussian_kernel.py")  
 # Training
 &emsp;1. Modify the root path in "train.py" according to your dataset position.  
