@@ -11,9 +11,9 @@ This is an simple and clean implemention of CVPR 2018 paper ["CSRNet: Dilated Co
     We'll call the directory that you cloned CSRNet-pytorch as ROOT.
 
 ## Data Setup
-&emsp;1. Download ShanghaiTech Dataset from
-[Dropbox](https://www.dropbox.com/s/fipgjqxl7uj8hd5/ShanghaiTech.zip?dl=0) or [Baidu Disk](https://pan.baidu.com/s/101mNo_Vz21IwDYnYTnLQpw) (code: a2v8) 
-&emsp;2. Put ShanghaiTech Dataset in 'ROOT/data'. 
+1. Download ShanghaiTech Dataset from
+[Dropbox](https://www.dropbox.com/s/fipgjqxl7uj8hd5/ShanghaiTech.zip?dl=0) or [Baidu Disk](https://pan.baidu.com/s/101mNo_Vz21IwDYnYTnLQpw) (code: a2v8)   
+2. Put ShanghaiTech Dataset in 'ROOT/data'. 
 You can find two python scripts in 
 'data_preparation' folder which are used to generate ground truth density-map for 
 ShanghaiTech PartA and PartB respectively. (Mind that you need move the script to corresponding 
