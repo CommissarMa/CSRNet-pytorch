@@ -21,6 +21,7 @@ sub dataset folder like 'ROOT/data/part_A_final' and run it)
 ## Train
 1. Modify the dataset root in 'config.py'   
 2. Run 'train.py'
+3. Open the command line and type in 'tensorboard --logdir=ROOT/runs', then browse 'localhost:6006' to see the visual result. 
 
 ## Testing
 1. Run 'test.py' for calculate MAE of test images or just show an estimated density-map. 
